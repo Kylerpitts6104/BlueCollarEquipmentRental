@@ -1,0 +1,76 @@
+:root{
+  --max-width:1100px;
+  --accent:#2b7a4b; /* change to suit your brand */
+  --muted:#666;
+  --bg:#f7f7f7;
+  --card:#fff;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;color:#222;background:var(--bg)}
+.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
+.logo{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.05rem}
+.nav a{margin-left:18px;text-decoration:none;color:#333}
+#nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
+
+.hero{background:linear-gradient(90deg,rgba(43,122,75,0.06),transparent);padding:40px 0}
+.hero-inner{display:flex;gap:24px;align-items:center}
+.hero h1{margin:0 0 8px;font-size:2rem}
+.lead{color:var(--muted)}
+.cta-row .btn{margin-right:10px}
+
+.hero-image img{width:340px;max-width:40vw;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+
+h2{margin-top:0}
+.grid{display:grid;gap:18px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.card, .fleet-item, .form{background:var(--card);padding:18px;border-radius:8px;box-shadow:0 6px 16px rgba(0,0,0,0.04)}
+.fleet-item img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+.fleet-item figcaption{padding-top:8px;font-size:0.95rem;color:var(--muted)}
+.about-list{display:flex;gap:12px;list-style:none;padding:0;margin:12px 0 0}
+.about-list li{background:#fff;padding:10px;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,0.03)}
+
+.form label{display:block;margin-bottom:10px}
+.form input,.form textarea{width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:6px;font-size:0.95rem}
+.btn{display:inline-block;padding:10px 16px;border-radius:6px;background:transparent;border:1px solid #ccc;text-decoration:none;color:#111}
+.btn-primary{background:var(--accent);color:#fff;border:0}
+
+.map-placeholder{height:200px;background:#efefef;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+.site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:0.95rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column}
+  .cols-3{grid-template-columns:1fr}
+  .cols-2{grid-template-columns:1fr}
+  #nav-toggle{display:block}
+  .nav{display:none}
+  .nav.open{display:block;position:absolute;right:20px;top:60px;background:#fff;padding:10px;border-radius:8px;box-shadow:0 10px 25px rgba(0,0,0,0.08)}
+}
+// Simple interactivity: mobile nav toggle, year, and basic form guard
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('nav');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+
+  // Update copyright year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Basic client-side form check
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(e) {
+    // minimal validation: ensure name and contact present
+    const name = form.querySelector('[name="name"]').value.trim();
+    const contact = form.querySelector('[name="contact"]').value.trim();
+    if (!name || !contact) {
+      e.preventDefault();
+      alert('Please include your name and contact details.');
+    } else {
+      // allow submission — if using Formspree, it will post to their endpoint
+    }
+  });
