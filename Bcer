@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blue Collar Equipment Rentals — Kyler Pitts</title>
+  <meta name="description" content="Heavy equipment rentals, excavator & brush clearing services. Call 541-905-6196." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Blue Collar Equipment</a>
+      <nav class="nav" id="nav">
+        <a href="#services">Services</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Reliable equipment rentals & excavation</h1>
+          <p class="lead">Excavators, skid steers, brush clearing — local, insured, and priced right.</p>
+          <p class="cta-row">
+            <a class="btn btn-primary" href="#contact">Book a call — 541-905-6196</a>
+            <a class="btn" href="#fleet">See fleet</a>
+          </p>
+        </div>
+        <div class="hero-image">
+          <!-- replace with your image -->
+          <img src="images/hero-placeholder.jpg" alt="Excavator on site" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="container services">
+      <h2>Services</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Excavation</h3>
+          <p>Site prep, trenches, grading — experienced operators and well-maintained machines.</p>
+        </div>
+        <div class="card">
+          <h3>Brush Clearing</h3>
+          <p>Fast, safe brush clearing for residential & commercial lots.</p>
+        </div>
+        <div class="card">
+          <h3>Equipment Rentals</h3>
+          <p>Daily/weekly rentals for excavators, skid steers, rollers, and attachments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fleet" class="container fleet">
+      <h2>Fleet</h2>
+      <div class="grid cols-3">
+        <figure class="fleet-item">
+          <img src="images/excavator.jpg" alt="Excavator" />
+          <figcaption>Mini Excavator — ideal for tight spaces</figcaption>
+        </figure>
+        <figure class="fleet-item">
+          <img src="images/skidsteer.jpg" alt="Skid steer" />
+          <figcaption>Skid Steer with mulcher/brush attachments</figcaption>
+        </figure>
+        <figure class="fleet-item">
+          <img src="images/roller.jpg" alt="Compactor" />
+          <figcaption>Roller / Compactor — grading & compaction</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <p>Owned and operated locally by Kyler Pitts. We focus on safety, timely service, and equipment that works. Licensed and insured — we treat your site like our own.</p>
+      <ul class="about-list">
+        <li>Insured & experienced operators</li>
+        <li>Flexible rental terms</li>
+        <li>Competitive pricing & free estimates</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <div class="grid cols-2 contact-grid">
+        <div>
+          <p><strong>Call / Text:</strong> <a href="tel:5419056196">541-905-6196</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@bluecollarequipment.example">info@bluecollarequipment.example</a></p>
+          <p><strong>Location:</strong> Local service area — available for transport & delivery.</p>
+
+          <!-- Optional map: replace src with your Google Maps embed if desired -->
+          <div class="map-placeholder">Map placeholder</div>
+        </div>
+
+        <form id="contact-form" class="form" action="https://formspree.io/f/{your-id}" method="POST">
+          <!-- If you don't have Formspree, change action to mailto: or implement server handling -->
+          <label>
+            Your name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Phone or email
+            <input type="text" name="contact" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <input type="hidden" name="_subject" value="Website inquiry — Blue Collar Equipment" />
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Blue Collar Equipment Rentals — Kyler Pitts • <a href="tel:5419056196">541-905-6196</a></p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
